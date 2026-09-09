@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Registration Form</title>
+
+    <style>
+        .form-container {
+            width: 350px;
+            background-color: aliceblue;
+            border: 1px solid black;
+            margin: 30px auto;
+            border-radius: 5px;
+            padding: 25px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="file"],
+        select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .iframe-container {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form class="form-container" action="/register" method="post">
+
+        <h2>Registration Form</h2>
+
+        <!-- Full Name -->
+        <label for="fullName">Full Name:</label>
+        <br>
+        <input type="text" id="fullName" name="fullName" required>
+        <br><br>
+
+
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <br>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+
+
+        <!-- Gender -->
+        <label>Gender:</label>
+        <br>
+
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+
+        <br><br>
+
+
+        <!-- Date -->
+        <label for="date">Date of Birth:</label>
+        <br>
+        <input type="date" id="date" name="date" required>
+        <br><br>
+
+
+        <!-- File -->
+        <label for="file">Upload File:</label>
+        <br>
+        <input type="file" id="file" name="file">
+        <br><br>
+
+
+        <!-- Branch -->
+        <label for="branch">Branch:</label>
+        <br>
+
+        <select name="branch" id="branch" required>
+            <option value="">-- Select Branch --</option>
+            <option value="cse">CSE</option>
+            <option value="it">IT</option>
+            <option value="ece">ECE</option>
+        </select>
+
+        <br><br>
+
+
+        <!-- Skills -->
+        <label>Select Skills:</label>
+        <br>
+
+        <input type="checkbox" id="java" name="skills" value="java">
+        <label for="java">Java</label>
+
+        <input type="checkbox" id="javascript" name="skills" value="javascript">
+        <label for="javascript">JavaScript</label>
+
+        <br><br>
+
+
+        <!-- Submit -->
+        <button type="submit">Register</button>
+
+    </form>
+
+
+    <!-- Google Maps -->
+    <div class="iframe-container">
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.5887019612906!2d77.61179877526061!3d27.575272476258544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39736d98dfe4cfd5%3A0x70de372d6558c765!2sKrishna%20Valley%20Wellness%20Resort%20Vrindavan!5e0!3m2!1sen!2sin!4v1787220059215!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <br>
+    
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ESnrn1kAD4E?si=aDI-IjIrJJtydOXK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Relative and Absolute</title>
+
+    <style>
+
+        .parent {
+            background-color: rgb(187, 187, 104);
+            padding: 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .box {
+            height: 200px;
+            width: 200px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #box-1 {
+            background-color: rgb(219, 166, 202);
+        }
+
+        #box-2 {
+            background-color: rgb(187, 72, 151);
+        }
+
+        #box-3 {
+            background-color: rgb(197, 241, 126);
+        }
+
+        #box-4 {
+            background-color: rgb(243, 136, 147);
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="parent">
+
+        <div id="box-1" class="box">
+            I am box -1
+        </div>
+
+        <div id="box-2" class="box">
+            I am Relative
+        </div>
+
+        <div id="box-3" class="box">
+            I am Absolute
+        </div>
+
+        <div id="box-4" class="box">
+            I am box-4
+        </div>
+
+    </div>
+
+</body>
+
+</html>
