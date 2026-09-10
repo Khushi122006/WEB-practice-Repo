@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Movie Card</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f3ff;
+            margin: 0;
+        }
+
+        .parent {
+            padding: 40px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .movie-card {
+            width: 205px;
+            background-color: white;
+
+            border: 1px solid #ddd;
+            border-radius: 16px;
+            overflow: hidden;
+
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+            transition: all 0.3s ease;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: 270px;
+
+            object-fit: cover;
+            display: block;
+        }
+
+        .movie-info {
+            padding: 14px;
+            height: 130px;
+        }
+
+        .movie-title {
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+
+        .movie-details {
+            font-size: 14px;
+            color: #555;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="parent">
+
+        <div class="movie-card">
+
+            <img src="https://cdn.district.in/movies-assets/images/cinema/Hanuman-Ansh-3199a900-6975-11f1-a51b-91d242246b61.jpg"
+                alt="Hanuman Ansh">
+
+            <div class="movie-info">
+
+                <div class="movie-title">
+                    Hanuman Ansh
+                </div>
+
+                <div class="movie-details">
+                    U | Hindi
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="movie-card">
+
+            <img src="https://cdn.district.in/movies-assets/images/cinema/toxiv%3Dc-8340c900-9c6f-11f1-97d4-73a32236137e.jpg"
+                alt="Toxic">
+
+            <div class="movie-info">
+
+                <div class="movie-title">
+                    Toxic: A Fairy Tale for Grown-ups
+                </div>
+
+                <div class="movie-details">
+                    A | Hindi
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="movie-card">
+
+            <img src="https://cdn.district.in/movies-assets/images/cinema/AW_Poster-18591030-9548-11f1-b29d-8985d3d6c644.jpg"
+                alt="Awarapan 2">
+
+            <div class="movie-info">
+
+                <div class="movie-title">
+                    Awarapan 2
+                </div>
+
+                <div class="movie-details">
+                    UA | Hindi
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="movie-card">
+
+            <img src="https://cdn.district.in/movies-assets/images/cinema/_Poster-d0d78f60-961a-11f1-8483-eb84b060bac3.jpg?im=Resize,width=400"
+                alt="Mirzapur">
+
+            <div class="movie-info">
+
+                <div class="movie-title">
+                    Mirzapur: The Movie
+                </div>
+
+                <div class="movie-details">
+                    A | Hindi
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
