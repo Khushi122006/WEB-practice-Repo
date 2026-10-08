@@ -7,6 +7,9 @@
 
     <title>Movie Card</title>
 
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
 
         * {
@@ -22,10 +25,9 @@
         .parent {
             padding: 40px;
 
-            display: flex;
-            flex-direction: row;
+            display: grid;
+            grid-template-columns: repeat(3, 205px);
             justify-content: center;
-            align-items: flex-start;
             gap: 20px;
         }
 
@@ -39,25 +41,32 @@
 
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 
-            transition: all 0.3s ease;
+            animation-name: animationCard;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+
+            cursor: pointer;
         }
 
         .movie-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(10px);
         }
 
         .movie-card img {
-            width: 100%;
+            width: 205px;
             height: 270px;
 
             object-fit: cover;
             display: block;
         }
 
+        /* Movie information area */
         .movie-info {
             padding: 14px;
-            height: 130px;
+            height: 150px;
+
+            display: flex;
+            flex-direction: column;
         }
 
         .movie-title {
@@ -72,15 +81,166 @@
             color: #555;
         }
 
+        /* Button */
+        .button {
+            background-color: black;
+            color: white;
+
+            border: none;
+            border-radius: 5px;
+
+            padding: 7px 12px;
+
+            cursor: pointer;
+
+            margin-top: auto;
+        }
+
+        .button:hover {
+            background-color: #333;
+        }
+
+        /* Animation delay */
+
+        .movie-card:nth-child(1) {
+            animation-delay: 0.5s;
+        }
+
+        .movie-card:nth-child(2) {
+            animation-delay: 0.8s;
+        }
+
+        .movie-card:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        .movie-card:nth-child(4) {
+            animation-delay: 1.3s;
+        }
+
+        .movie-card:nth-child(5) {
+            animation-delay: 1.6s;
+        }
+
+        .movie-card:nth-child(6) {
+            animation-delay: 1.9s;
+        }
+
+        @keyframes animationCard {
+
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        /* Popup */
+
+        .popup {
+            display: none;
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background-color: rgba(0, 0, 0, 0.7);
+
+            justify-content: center;
+            align-items: center;
+
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background-color: white;
+
+            width: 400px;
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            text-align: center;
+
+            position: relative;
+
+            animation: popupAnimation 0.3s ease;
+        }
+
+        .popup-content img {
+            width: 180px;
+            height: 240px;
+
+            object-fit: cover;
+
+            border-radius: 10px;
+        }
+
+        .popup-title {
+            font-size: 24px;
+
+            font-weight: bold;
+
+            margin-top: 15px;
+        }
+
+        .popup-details {
+            font-size: 15px;
+
+            color: #555;
+
+            margin-top: 10px;
+        }
+
+        .close {
+            position: absolute;
+
+            top: 8px;
+            right: 15px;
+
+            font-size: 30px;
+
+            cursor: pointer;
+        }
+
+        @keyframes popupAnimation {
+
+            from {
+                opacity: 0;
+                transform: scale(0.7);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+        }
+
     </style>
 
 </head>
+
 
 <body>
 
     <div class="parent">
 
-        <div class="movie-card">
+
+        <!-- 1st card -->
+
+        <div class="movie-card"
+            onclick="openPopup('Hanuman Ansh', 'https://cdn.district.in/movies-assets/images/cinema/Hanuman-Ansh-3199a900-6975-11f1-a51b-91d242246b61.jpg', '⭐10.0 | U | Hindi')">
 
             <img src="https://cdn.district.in/movies-assets/images/cinema/Hanuman-Ansh-3199a900-6975-11f1-a51b-91d242246b61.jpg"
                 alt="Hanuman Ansh">
@@ -92,15 +252,22 @@
                 </div>
 
                 <div class="movie-details">
-                    U | Hindi
+                    ⭐10.0 | U | Hindi
                 </div>
+
+                <button class="button" onclick="event.stopPropagation()">
+                    Book Now
+                </button>
 
             </div>
 
         </div>
 
 
-        <div class="movie-card">
+        <!-- 2nd card -->
+
+        <div class="movie-card"
+            onclick="openPopup('Toxic: A Fairy Tale for Grown-ups', 'https://cdn.district.in/movies-assets/images/cinema/toxiv%3Dc-8340c900-9c6f-11f1-97d4-73a32236137e.jpg', '⭐8.5 | A | Hindi')">
 
             <img src="https://cdn.district.in/movies-assets/images/cinema/toxiv%3Dc-8340c900-9c6f-11f1-97d4-73a32236137e.jpg"
                 alt="Toxic">
@@ -112,15 +279,22 @@
                 </div>
 
                 <div class="movie-details">
-                    A | Hindi
+                    ⭐8.5 | A | Hindi
                 </div>
+
+                <button class="button" onclick="event.stopPropagation()">
+                    Book Now
+                </button>
 
             </div>
 
         </div>
 
 
-        <div class="movie-card">
+        <!-- 3rd card -->
+
+        <div class="movie-card"
+            onclick="openPopup('Awarapan 2', 'https://cdn.district.in/movies-assets/images/cinema/AW_Poster-18591030-9548-11f1-b29d-8985d3d6c644.jpg', '⭐8.5 | UA | Hindi')">
 
             <img src="https://cdn.district.in/movies-assets/images/cinema/AW_Poster-18591030-9548-11f1-b29d-8985d3d6c644.jpg"
                 alt="Awarapan 2">
@@ -132,15 +306,22 @@
                 </div>
 
                 <div class="movie-details">
-                    UA | Hindi
+                    ⭐8.5 | UA | Hindi
                 </div>
+
+                <button class="button" onclick="event.stopPropagation()">
+                    Book Now
+                </button>
 
             </div>
 
         </div>
 
 
-        <div class="movie-card">
+        <!-- 4th card -->
+
+        <div class="movie-card"
+            onclick="openPopup('Mirzapur: The Movie', 'https://cdn.district.in/movies-assets/images/cinema/_Poster-d0d78f60-961a-11f1-8483-eb84b060bac3.jpg?im=Resize,width=400', '⭐10.0 | A | Hindi')">
 
             <img src="https://cdn.district.in/movies-assets/images/cinema/_Poster-d0d78f60-961a-11f1-8483-eb84b060bac3.jpg?im=Resize,width=400"
                 alt="Mirzapur">
@@ -152,12 +333,102 @@
                 </div>
 
                 <div class="movie-details">
-                    A | Hindi
+                    ⭐10.0 | A | Hindi
                 </div>
+
+                <button class="button" onclick="event.stopPropagation()">
+                    Book Now
+                </button>
 
             </div>
 
         </div>
+
+
+        <!-- 5th card -->
+
+        <div class="movie-card"
+            onclick="openPopup('Hanuman Ansh', 'https://cdn.district.in/movies-assets/images/cinema/Hanuman-Ansh-3199a900-6975-11f1-a51b-91d242246b61.jpg', '⭐9.0 | U | Hindi')">
+
+            <img src="https://cdn.district.in/movies-assets/images/cinema/Hanuman-Ansh-3199a900-6975-11f1-a51b-91d242246b61.jpg"
+                alt="Hanuman Ansh">
+
+            <div class="movie-info">
+
+                <div class="movie-title">
+                    Hanuman Ansh
+                </div>
+
+                <div class="movie-details">
+                    ⭐9.0 | U | Hindi
+                </div>
+
+                <button class="button" onclick="event.stopPropagation()">
+                    Book Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- 6th card -->
+
+        <div class="movie-card"
+            onclick="openPopup('Toxic: A Fairy Tale for Grown-ups', 'https://cdn.district.in/movies-assets/images/cinema/toxiv%3Dc-8340c900-9c6f-11f1-97d4-73a32236137e.jpg', '⭐9.0 | A | Hindi')">
+
+            <img src="https://cdn.district.in/movies-assets/images/cinema/toxiv%3Dc-8340c900-9c6f-11f1-97d4-73a32236137e.jpg"
+                alt="Toxic">
+
+            <div class="movie-info">
+
+                <div class="movie-title">
+                    Toxic: A Fairy Tale for Grown-ups
+                </div>
+
+                <div class="movie-details">
+                    ⭐9.0 | A | Hindi
+                </div>
+
+                <button class="button" onclick="event.stopPropagation()">
+                    Book Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- 7th card using Bootstrap -->
+
+        <div class="card shadow" style="width: 205px;">
+
+            <img src="https://cdn.district.in/movies-assets/images/cinema/Hanuman-Ansh-3199a900-6975-11f1-a51b-91d242246b61.jpg"
+                class="card-img-top"
+                alt="Hanuman Ansh">
+
+            <div class="card-body">
+
+                <span class="badge text-bg-warning">
+                    Trending
+                </span>
+
+                <h5 class="card-title">
+                    Hanuman Ansh
+                </h5>
+
+                <p class="card-text">
+                    ⭐9.5 | U | Hindi
+                </p>
+
+                <button class="btn btn-dark">
+                    Book Now
+                </button>
+
+            </div>
+
+        </div>
+
 
     </div>
 
