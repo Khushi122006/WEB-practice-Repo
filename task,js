@@ -1,0 +1,112 @@
+// - calculate the subtotal using ticket price  x quantity 
+// - if the quantity is 5 or more , apply 15% discount
+// - otherwise , if the quantity is 3 more , apply a 10% discount
+// - otherwise , no quantity-based discount is applied 
+// - if the coupon code is valid , apply an additional 5% disount to amount remaining after the quantity discount 
+// - round the final amount using Math.round()
+// - print the sub total , discounts and final payable amount 
+// example :if the ticket price is rs.250 and quantity is 3 , subtotal is 750 ... the quantity discount is rs.75 and coupon discount is 33.75 ..
+//The final payable amount is rs.641 after rounding 
+
+
+
+
+
+// answer 1 
+
+// let price = 250;
+// let quantity = 3;
+
+// let subtotal = price * quantity;
+
+// console.log("Subtotal:", subtotal);
+
+
+// //answer 2
+// let price = 250;
+// let quantity = 3;
+
+// let subtotal = price * quantity;
+// let discount = 0;
+
+// if (quantity >= 5) {
+//     discount = subtotal * 0.15;
+// } else if (quantity >= 3) {
+//     discount = subtotal * 0.10;
+// } else {
+//     discount = 0;
+// }
+
+// console.log("Subtotal:", subtotal);
+// console.log("Quantity Discount:", discount);
+// console.log("Final Amount:", subtotal - discount);
+
+
+// //answer 3
+// let price = 250;
+// let quantity = 3;
+// let coupon = "SAVE5";
+
+// let subtotal = price * quantity;
+// let quantityDiscount = 0;
+// let couponDiscount = 0;
+
+// if (quantity >= 5) {
+//     quantityDiscount = subtotal * 0.15;
+// } else if (quantity >= 3) {
+//     quantityDiscount = subtotal * 0.10;
+// }
+
+// let amount = subtotal - quantityDiscount;
+
+// if (coupon === "SAVE5") {
+//     couponDiscount = amount * 0.05;
+// }
+
+// let finalAmount = Math.round(amount - couponDiscount);
+
+// console.log("Subtotal:", subtotal);
+// console.log("Quantity Discount:", quantityDiscount);
+// console.log("Coupon Discount:", couponDiscount);
+// console.log("Final Payable Amount:", finalAmount);
+
+
+
+//   TASK 2 //
+
+
+const movie ={
+    customerName: "Khushi" ,
+    movieName: "Dhurandhar",
+    ticketPrice: 200 ,
+    quantity: 5 ,
+
+    customerDetails:{
+        email: "khushi@gmail.com" ,
+        city :"Kanpur" ,
+    },
+    seats: ["A1" , "B1" , "C1"],
+
+    calculateTotalAmount : function(){
+        return this.ticketPrice*this.quantity;
+    }
+}
+// movieName
+console.log(movie.movieName);
+
+//customers city
+console.log(movie.customerDetails.city);
+
+//change ticket price and add booking status
+movie.ticketPrice=250;
+movie.bookingStatus ="confirmed";
+
+//object keys
+console.log(Object.keys(movie));
+
+// 5. Destructure movieName and quantity
+let { movieName, quantity } = movie;
+console.log(movieName, quantity);
+
+// 6. Calculate and print total booking amount
+console.log(movie.calculateTotalAmount());
